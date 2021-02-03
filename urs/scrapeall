@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Make reddit api calls with URS (only for subreddit)(0)
+echo searching hot posts
+echo Y | python3 urs.py -r $1 h $2 --json
+echo searching new posts
+echo Y | python3 urs.py -r $1 n $2 --json
+echo searching top posts
+echo Y | python3 urs.py -r $1 c $2 --json
+echo searching rising posts
+echo Y | python3 urs.py -r $1 t $2 --json
+echo searching search posts
+echo Y | python3 urs.py -r $1 r $2 --json
+echo searching controversial posts
+echo Y | python3 urs.py -r $1 s $2 --json
+
+# Combines JSON Files into one (1)
+cat ../scrapes/*/*.json | jq -s 'flatten' > ../urs/all.json
+# Extracts links from JSON (2)
+cat all.json | jq -r '.[] | .. | .URL? | select( strings|test("https://www.reddit.com/r"))' > links
+
+# Print the mention results (5)
+print_res () {
+  # while read t; do
+    echo "Mentions of $1 in r/WSB: $(grep -ic "$1" all.json) & in links: $(grep -ic "$1" combilinks)"
+  # done < tickers
+}
+export -f print_res
+
+# Combines Link Text (4)
+count_links () {
+  echo Curling...hang on
+  curl -s $1 >> combilinks
+  echo Process\# $$;
+}
+export -f count_links
+
+# Print links or count them to file (3)
+if [ ${3:-foo} == "l" ] ; then
+  cat links
+  parallel -j25 print_res < tickers
+elif [ ${3:-foo == "c"} ] ; then
+  parallel -j25 count_links < links
+  wait
+  parallel -j25 print_res < tickers
+fi
