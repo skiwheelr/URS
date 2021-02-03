@@ -1,3 +1,21 @@
+****FOR SKIWHEELR ADDONS, READ THE FOLLOWING****
+
+0) You should do this on a mac or linux machine.
+1) Follow the below URS setup of Credentials.py file and remove the .txt extension.
+2) Enter "chmod u+x scrapeall" in the URS/urs directory.
+3) pip3 install packages: praw, jq, and brew install: parallel (GNU)
+4) From URS/urs folder, enter PATH=$PATH:`pwd` so you can run with one word
+
+5) Run the app by typing "scrapeall <subreddit name> <depth of search> <l or c> (l or c depends on whether you want to simply print the discovered links with 'l' or 'c' if you want to scan them as well (outside of reddit api)
+6) Make sure to clean up after you are done by entering the following from the URS/urs folder:
+
+* rm -rf ../scrapes/* all.json links combilinks
+
+## Never push your Credentials.py file, this stays in gitignore and please do not push your scraped data as it is HUGE.
+
+
+
+
      __  __  _ __   ____  
     /\ \/\ \/\`'__\/',__\ 
     \ \ \_\ \ \ \//\__, `\
