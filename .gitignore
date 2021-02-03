@@ -5,3 +5,9 @@ env/*
 scrapes/*
 
 URS.egg-info/*
+
+urs/credentials.py
+urs/all.json
+urs/links
+urs/combilinks
+
