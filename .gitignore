@@ -10,4 +10,5 @@ urs/credentials.py
 urs/all.json
 urs/links
 urs/combilinks
+tweet/config.py
 

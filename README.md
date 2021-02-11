@@ -3,8 +3,10 @@
 0) You should do this on a mac or linux machine.
 1) Follow the below URS setup of Credentials.py file and remove the .txt extension.
 2) Enter "chmod u+x scrapeall" in the URS/urs directory.
-3) pip3 install packages: praw, jq, and brew install: parallel (GNU)
+2.5) pip3 install -r requirements.txt
+3) also pip3 install packages: praw, jq, and brew install: parallel (GNU)
 4) From URS/urs folder, enter PATH=$PATH:`pwd` so you can run with one word
+4.5) Add the tickers you want to search for in tickers, separated by line
 
 5) Run the app by typing "scrapeall <subreddit name> <depth of search> <l or c> (l or c depends on whether you want to simply print the discovered links with 'l' or 'c' if you want to scan them as well (outside of reddit api)
 6) Make sure to clean up after you are done by entering the following from the URS/urs folder:
