@@ -25,7 +25,7 @@ both = []
 #mrzackmorris
 for user in users.list[:1]:
     userID = user
-    tweets = api.user_timeline(screen_name=userID,count=20, include_rts = False, tweet_mode='extended')
+    tweets = api.user_timeline(screen_name=userID,count=2000, include_rts = False, tweet_mode='extended')
     for info in tweets:
         if re.findall(exp,info.full_text):
             for ticker in re.findall(exp,info.full_text):
@@ -33,11 +33,11 @@ for user in users.list[:1]:
                     one.append(ticker)
             # print(user, " mentioned ", re.findall(exp,info.full_text))
     print(user, "mentioned", one)
-    
+
 #pharmdca
 for user in users.list[1:2]:
     userID = user
-    tweets = api.user_timeline(screen_name=userID,count=20, include_rts = False, tweet_mode='extended')
+    tweets = api.user_timeline(screen_name=userID,count=2000, include_rts = False, tweet_mode='extended')
     for info in tweets:
         if re.findall(exp,info.full_text):
             for ticker in re.findall(exp,info.full_text):
