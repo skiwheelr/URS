@@ -1,0 +1,5 @@
+consumer_key="AgTezz2MvVNdBcI9jBfevvao6"
+consumer_secret="lMItIjs6nkswsTxrxvonJ3ThqrQJ47UITNPeC2nosxEzoQFRdE"
+access_token="96573528-fuTVi1TZQqjghj0MMayaYnexbchoVXs8pr7XdS5aD"
+access_token_secret="aIQbjlCDZLN40wzSyP8ytC7RWLJXKeAWFnmzVZXLZGUxq"
+groupme_token="a9359e504e2d013954ba5283ade31f42"
