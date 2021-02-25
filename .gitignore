@@ -6,7 +6,7 @@ scrapes/*
 
 URS.egg-info/*
 
-urs/credentials.py
+urs/Credentials.py
 urs/all.json
 urs/links
 urs/combilinks
