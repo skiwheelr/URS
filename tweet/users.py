@@ -1,1 +1,1 @@
-list = ["mrzackmorris","pharmdca","ripster47"]
+list = ["mrzackmorris","pharmdca","ripster47","VIPSheffTrades"]
