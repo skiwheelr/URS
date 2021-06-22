@@ -1,14 +1,10 @@
 __pycache__/
 env/*
 .vscode/*
-
 scrapes/*
-
 URS.egg-info/*
-
 urs/Credentials.py
 urs/all.json
 urs/links
 urs/combilinks
 tweet/config.py
-
