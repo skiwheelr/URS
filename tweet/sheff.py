@@ -35,18 +35,21 @@ def check_if_string_in_file(file_name, string_to_search):
 #sheff
 for user in users.list[3:4]:
     userID = user
-    tweets = api.user_timeline(screen_name=userID,count=200, include_rts = False, tweet_mode='extended')
+    tweets = api.user_timeline(screen_name=userID,count=50, include_rts = False)
     for info in tweets:
-        if re.findall(exp,info.full_text):
+        # if re.findall(exp,info.text) & "🔔" in info.text:
+        if "🔔" in info.text[0:5]:
             # print(info.full_text)
+            linecode = "*" + info.text[0:100] + "*"
+            # print(linecode)
             file = open("sheffres.txt", 'a+')
             file.close()
-            if check_if_string_in_file('sheffres.txt', info.full_text):
+            if check_if_string_in_file('sheffres.txt', linecode):
                 print("already sent")
             else:
                 file = open("sheffres.txt", 'a+')
-                file.write('\n' + info.full_text + '\n')
+                file.write(linecode + '\n')
                 file.close()
                 print("new notification")
-                messenger(info.full_text)
-
+                print(linecode)
+                messenger(info.text)
